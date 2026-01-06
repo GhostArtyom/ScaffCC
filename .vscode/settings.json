@@ -1,0 +1,29 @@
+/*
+
+./scaffold.sh -h
+
+Usage: ./scaffold.sh [-hv] [-rqfRFckdso] [-l #] [-P #] <filename>.scaffold
+    -r   Generate resource estimate (default)
+    -q   Generate QASM
+    -f   Generate flattened QASM
+    -b   Generate OpenQASM
+    -R   Enable rotation decomposition
+    -T   Enable Toffoli decomposition
+    -l   Levels of recursion to run (default=1)
+    -P   Set precision of rotation decomposition in decimal digits (default=10)
+    -F   Force running all steps
+    -c   Clean all files (no other actions)
+    -k   Keep all intermediate files (default only keeps specified output,
+         but requires recompilation for any new output)
+    -d   Dry-run; show all commands to be run, but do not execute
+    -s   Generate QX Simulator input file 
+    -o   Generate optimized QASM
+    -v   Show current ScaffCC version
+
+*/
+
+{
+    "code-runner.executorMap": {
+        "cpp": "./scaffold.sh -T -b"
+    }
+}
