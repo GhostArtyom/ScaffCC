@@ -14,8 +14,8 @@ if __name__ == "__main__":
   call_signatures = {}
   with open(file_name, 'r+') as f:
     data = mmap.mmap(f.fileno(), 0)
-    decls_re = re.compile(b"^[ \t\f\v]*scaff_module\s+(?P<name>\w+)\s*(?P<args>\([^\)]*\))\s*({|;)?", re.MULTILINE)
-    reverse_re = re.compile(b"^(?!scaff_module)\s*_reverse_(?P<rev_gate>\w+)\(([^\)]*)\)", re.MULTILINE)
+    decls_re = re.compile(rb"^[ \t\f\v]*scaff_module\s+(?P<name>\w+)\s*(?P<args>\([^\)]*\))\s*({|;)?", re.MULTILINE)
+    reverse_re = re.compile(rb"^(?!scaff_module)\s*_reverse_(?P<rev_gate>\w+)\(([^\)]*)\)", re.MULTILINE)
     decl_matches = decls_re.findall(data)
     reverse_matches = reverse_re.findall(data)
     for match in decl_matches:

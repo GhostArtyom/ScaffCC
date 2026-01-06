@@ -46,7 +46,7 @@ def process_qasm(fname):
     pattern_main = re.compile(r"\s*(\bvoid|module\b)\s+(\bmain|main1\b)\s*\((.*?)\)\s*(\{)*\s*")
     pattern_comment = re.compile(r"\s*//--//--(.*?)--//--//\s*")
 
-    fout_name = re.sub('\.qasmh$','_qasm.scaffold',fname)
+    fout_name = re.sub(r'\.qasmh$','_qasm.scaffold',fname)
     fout = open(fout_name,'w')
 
     fout.write('#include<stdio.h>\n')
